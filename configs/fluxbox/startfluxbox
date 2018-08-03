@@ -1,0 +1,52 @@
+#!/bin/sh
+
+command="`basename \"$0\"`"
+fluxdir="$HOME/.fluxbox"
+startup="$fluxdir/startup"
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -c|--config)
+            if [ $# -lt 2 ]; then
+                echo "$command:error, missing argument"
+                exit 1
+            fi
+            shift
+            startup=$1
+        ;;
+        -h|--help) cat <<EOF
+Usage: $command [-h] [-c startupfile]
+EOF
+        exit
+        ;;
+    esac
+    shift
+done
+
+if [ -x "$startup" ]; then
+    exec "$startup"
+elif [ -r "$startup" ]; then
+    exec sh "$startup"
+else
+    if [ ! -d $fluxdir ]; then
+        mkdir -p "$fluxdir/backgrounds" "$fluxdir/styles" "$fluxdir/pixmaps"
+    fi
+    if [ ! -r "$startup" ]; then
+        ( cat << EOF
+#!/bin/sh
+xmodmap "$HOME/.Xmodmap"
+cd /gp
+./gp-linux32bit &
+cd $HOME
+which fbautostart > /dev/null
+if [ \$? -eq 0 ]; then
+    fbautostart
+fi
+
+exec fluxbox
+EOF
+    ) > "$startup"
+    fi
+    chmod 644 "$startup"
+    exec sh "$startup"
+fi
