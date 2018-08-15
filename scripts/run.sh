@@ -1,6 +1,6 @@
 #!/bin/bash
 while :
 do
-  $(head -1 cmd.txt)
+  $(head -1 /gp/cmd)
   > cmd.txt
 done
