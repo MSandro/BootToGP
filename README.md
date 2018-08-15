@@ -6,12 +6,12 @@ BootToGP is a simple Debian based networkinstaller which brings all you need to 
 
 
 ## About the OS
-OS-Base: Debian 9.5 (Netinstaller)
-Display-Server: Xorg
-Login-Manager (DM): none
-Window-Manager: Fluxbox
-SSH & SFTP: enabled
-Default GP Edition: GPower (by MSandro)
+* OS-Base: Debian 9.5 (Netinstaller)
+* Display-Server: Xorg
+* Login-Manager (DM): none
+* Window-Manager: Fluxbox
+* SSH & SFTP: enabled
+* Default GP Edition: GPower (by MSandro)
 
 
 ## How to use v001
