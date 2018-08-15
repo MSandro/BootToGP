@@ -6,7 +6,7 @@ BootToGP is a simple Debian based networkinstaller which brings all you need to 
 
 
 ## About the OS
-Os-Base: Debian 9.5 (Netinstaller)
+OS-Base: Debian 9.5 (Netinstaller)
 Display-Server: Xorg
 Login-Manager (DM): none
 Window-Manager: Fluxbox
