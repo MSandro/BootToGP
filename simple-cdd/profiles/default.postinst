@@ -8,7 +8,7 @@ curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/apps
 curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/overlay > /etc/X11/fluxbox/overlay
 curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/startfluxbox > /usr/bin/startfluxbox
 curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/general/sshd_config > /etc/ssh/sshd_config
-curl https://raw.githubusercontent.com/MSandro/BootToGP/master/scripts/run.sh > /gp/run.sh
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/scripts/run.sh > /gp/run.sh
 chmod a+x /gp/run.sh
-wget https://github.com/MSandro/BootToGP/raw/master/gp/project.gpp -O /gp/project.gpp
-curl https://raw.githubusercontent.com/MSandro/BootToGP/master/gp/settings.json > /gp/runtime/settings.json
+wget https://github.com/MSandro/BootToGP/raw/001/gp/project.gpp -O /gp/project.gpp
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/gp/settings.json > /gp/runtime/settings.json
