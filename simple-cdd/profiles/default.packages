@@ -1,0 +1,27 @@
+# window manager
+fluxbox
+eterm
+
+# x-teminal-emulator
+rxvt-unicode
+
+# includes startx
+xbase-clients
+
+# X
+xorg
+
+# workaround http://bugs.debian.org/405639
+xserver-xorg-input-all
+xserver-xorg-video-all
+
+#ssh and sftp
+openssh-server
+
+# libs
+libasound2
+libpangocairo-1.0-0
+ca-certificates
+
+# git
+git
