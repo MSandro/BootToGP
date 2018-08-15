@@ -35,6 +35,8 @@ else
         ( cat << EOF
 #!/bin/sh
 xmodmap "$HOME/.Xmodmap"
+> /gp/cmd
+/gp/run.sh &
 cd /gp
 ./gp-linux32bit &
 cd $HOME
