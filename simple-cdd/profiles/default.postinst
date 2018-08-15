@@ -1,0 +1,14 @@
+#!/bin/sh
+apt install -y git-core wget curl ca-certificates
+git clone https://github.com/MSandro/GPower.git /gp
+sed -i 's/\%I \$TERM/-a root \%I \$TERM/' /lib/systemd/system/getty\@.service
+printf "if [ -z \$DISPLAY ] && [ \$(tty) = /dev/tty1 ]; then\nexec startx\nfi\nif [ -f ~/.bashrc ]; then\n. ~/.bashrc\nfi" > /root/.bash_profile
+echo "session.screen0.toolbar.visible:	false" >> /etc/X11/fluxbox/init
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/apps > /etc/X11/fluxbox/apps
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/overlay > /etc/X11/fluxbox/overlay
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/fluxbox/startfluxbox > /usr/bin/startfluxbox
+curl https://raw.githubusercontent.com/MSandro/BootToGP/001/configs/general/sshd_config > /etc/ssh/sshd_config
+curl https://raw.githubusercontent.com/MSandro/BootToGP/master/scripts/run.sh > /gp/run.sh
+chmod a+x /gp/run.sh
+wget https://github.com/MSandro/BootToGP/raw/master/gp/project.gpp -O /gp/project.gpp
+curl https://raw.githubusercontent.com/MSandro/BootToGP/master/gp/settings.json > /gp/runtime/settings.json

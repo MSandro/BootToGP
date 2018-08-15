@@ -1,0 +1,42 @@
+### Localization
+# Preseeding only locale sets language, country and locale.
+d-i debian-installer/language string en  
+d-i debian-installer/country string US  
+d-i debian-installer/locale string en_US.UTF-8
+
+# Preseeding only locale sets language, country and locale.
+d-i pkgsel/install-language-support boolean false
+
+##skip user creation
+d-i passwd/make-user boolean false
+
+##other
+d-i netcfg/get_hostname string BootToGP
+d-i netcfg/get_domain string BootToGP.local
+popularity-contest popularity-contest/participate boolean false
+d-i base-installer/install-recommends boolean false
+d-i finish-install/reboot_in_progress note
+base-config base-config/intro note
+base-config base-config/login note
+tasksel   tasksel/first multiselect
+
+#partitioning
+d-i partman-auto/choose_recipe select atomic
+d-i partman/confirm     boolean true
+
+##use non-free and contrib
+d-i apt-setup/non-free boolean true
+d-i apt-setup/contrib boolean true
+base-config apt-setup/another boolean false
+
+#network and hw
+d-i netcfg/wireless_wep string
+d-i hw-detect/load_firmware boolean true
+
+### Mirror settings (selecting httpredir as hostname, the Country doesn't matter)
+d-i mirror/country string Austria  
+d-i mirror/http/hostname string httpredir.debian.org  
+d-i mirror/http/directory string /debian  
+d-i mirror/http/proxy string
+
+d-i preseed/early_command string anna-install simple-cdd-profiles
